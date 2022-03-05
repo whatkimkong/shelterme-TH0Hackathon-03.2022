@@ -1,0 +1,75 @@
+.title {
+  margin: 10vh 10vh 5vh 8vh;
+  width: 70%;
+  max-width: 300px;
+}
+
+.list-container {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+.icon-img-styles {
+  height: 13vh;
+  min-height: 100px;
+  min-width: 140px;
+  max-width: 180px;
+}
+
+.category-btn {
+  border: solid;
+  border-color: #8eac8c;
+  background-color: #7c8a7b;
+  border-radius: 50%;
+  color: #dcd6d1;
+  font-weight: bold;
+  font-size: x-large;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0px 10px 30px;
+  margin: 10px 10px 20px 40px;
+}
+  
+.category-btn:hover {
+  color: rgb(95, 93, 93);
+}
+
+.howdiy-listed {
+  border: none;
+  margin: 20px 40px 0px 40px;
+  background-color: #e0ecdf;
+  color: rgb(95, 93, 93);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px 20px 0px;
+}
+
+.howdiy-list-child {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.howdiy-list-img {
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 50%;
+  height: 20vw;
+  width: 20vw;
+  max-height: 200px;
+  max-width: 200px;
+}
+
+.howdiy-list-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: flex-start;
+  margin-left: 20px;
+}
