@@ -3,6 +3,8 @@ import axios from "axios";
 import { NavLink } from "react-router-dom";
 //
 import "../root.css";
+import title from "../img/Shelter.png";
+
 
 class Profile extends Component {
   state = {
@@ -47,28 +49,26 @@ class Profile extends Component {
       });
   };
 
+
   render() {
     const { myHowdiys, isLoadingHowdiy } = this.state;
     const { user } = this.props;
-    const emptyStar = "☆";
-    const fullStar = "★";
+    const emptyStar = "♡";
+    const fullStar = "♥";
     return (
       <div>
         {user && (
           <>
             <div className="profile-section">
-              <h1>Howdiy {user.username}!</h1>
+              <h1>Welcome {user.username}!</h1>
               <div className="profile-child"></div>
               <div className="profile-text">
-                <h6> First Name: {user.firstName}</h6>
-                <h6> Last Name: {user.lastName}</h6>
-                <h6> Username: {user.username}</h6>
-                <h6> Logging in with: {user.email}</h6>
+              <img src={title} alt="title" className="root-title" style={{width: "20vw"}}/>
               </div>
             </div>
             <br />
-            <hr></hr>
-            <h2 className="profile-section"> Your Howdiys:</h2>
+            
+            <h2 className="profile-section"> Your Offered Shelters:</h2>
           </>
         )}
         {isLoadingHowdiy && <h1>...isLoading!</h1>}
@@ -79,14 +79,7 @@ class Profile extends Component {
                 <div>
                   <div className="profile-howdiy-list-child">
                     <div>
-                    <img
-                      className="profile-howdiy-list-img"
-                      src={eachHowdiy.productImg}
-                      alt="productImage"
-                    />
-                    </div>
-                    <div>
-                      <h4>{eachHowdiy.funName}</h4>
+                      
                       <h5>{eachHowdiy.descriptiveName}</h5>
                       <NavLink
                         className="button-link"
@@ -95,19 +88,27 @@ class Profile extends Component {
                       >
                         View
                       </NavLink>
+                      <br></br>
+                        <div style={{marginTop: "10vh", display: "flex"}}>
+                        <img
+                          className="profile-howdiy-list-img"
+                          src={eachHowdiy.productImg}
+                          alt="productImage"
+                        /><p style={{paddingLeft: "1vw"}}>by:<h6> me</h6></p>
+                        </div>
                     </div>
                     <div className="profile-howdiy-list-ratings">
-                    <h6> Cost Rating: {fullStar.repeat(Math.round(eachHowdiy.costRating)) + emptyStar.repeat(3 - Math.round(eachHowdiy.costRating))}</h6>
-                    <h6> Difficulty Rating: {fullStar.repeat(Math.round(eachHowdiy.difficultyRating)) + emptyStar.repeat(3 - Math.round(eachHowdiy.difficultyRating))}</h6>
-                    <h6> Time Intensity: {fullStar.repeat(Math.round(eachHowdiy.timeOfPreparation)) + emptyStar.repeat(3 - Math.round(eachHowdiy.timeOfPreparation))}</h6>
+                    <h6> Shelter Rate: {fullStar.repeat(Math.round(eachHowdiy.costRating)) + emptyStar.repeat(3 - Math.round(eachHowdiy.costRating))}</h6>
+                    <h6> Languages: {fullStar.repeat(Math.round(eachHowdiy.difficultyRating)) + emptyStar.repeat(3 - Math.round(eachHowdiy.difficultyRating))}</h6>
+                    
                     <NavLink
                         className="button-link"
                         to={`/howdiy/edit/${eachHowdiy._id}`}
                       >
                         Edit
                       </NavLink>
-                      <br></br>
-                      <button
+                      
+                      <button style={{marginTop: "2vw"}}
                         className="button-link"
                         onClick={() => {
                           this.deleteHowdiy(eachHowdiy._id);
@@ -127,25 +128,3 @@ class Profile extends Component {
 }
 
 export default Profile;
-
-
-/* 
-
-
-<Container>
-  <Row>
-    <Col sm={8}>sm=8</Col>
-    <Col sm={4}>sm=4</Col>
-  </Row>
-</Container>
-
-PROFILE PLANNING WILL BE :
-like CategoryList = howdiyList, filteredList (filtered by user creation)
-get info of all "MY" Howdiys and Info of User's Account
-
-NOTES
-- you can have multiple isLoadings in one class!! spinners in different sections
-- you can have multiple axios.bla's
-- use axios to fetch the DATA! -- credentials gives BE access to this request session. Authorization!
-
-*/
