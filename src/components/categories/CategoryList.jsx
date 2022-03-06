@@ -62,16 +62,13 @@ class CategoryList extends Component {
     const { category } = this.props.match.params;
     const { filteredList, isLoading } =
       this.state;
-    const emptyStar = "☆";
-    const fullStar = "★";
+      const emptyStar = "♡";
+      const fullStar = "♥";
+      
     return (
       <div>
-        { category === 'facecare' && <img src={facecareTitle} alt="title" className="title title-img" />}
-        { category === 'bodycare' && <img src={bodycareTitle} alt="title" className="title title-img" />}
-        { category === 'housecare' && <img src={housecareTitle} alt="title" className="title title-img" />}
-        { category === 'play' && <img src={playTitle} alt="title" className="title title-img" />}
-        { category === 'food' && <img src={foodTitle} alt="title" className="title title-img" />}
-        { category === 'drink' && <img src={drinkTitle} alt="title" className="title title-img" />}
+        
+        { category === 'facecare' && <h3>ShelterME</h3>}
         <Search handleFilter={this.handleFilter} />
         {isLoading && <h1>is loading</h1>}
         {!isLoading &&
@@ -86,7 +83,6 @@ class CategoryList extends Component {
                       alt="productImage"
                     />
                     <div className="howdiy-list-text">
-                      <h4>{eachHowdiy.funName}</h4>
                       <h5>{eachHowdiy.descriptiveName}</h5>
                       <NavLink
                         className="button-link"
@@ -99,9 +95,8 @@ class CategoryList extends Component {
                       <p>Created by: {eachHowdiy.createdBy.username}</p>
                     </div>
                     <div className="howdiy-list-text">
-                    <h6> Cost Rating: {fullStar.repeat(Math.round(eachHowdiy.costRating)) + emptyStar.repeat(3 - Math.round(eachHowdiy.costRating))}</h6>
-                    <h6> Difficulty Rating: {fullStar.repeat(Math.round(eachHowdiy.difficultyRating)) + emptyStar.repeat(3 - Math.round(eachHowdiy.difficultyRating))}</h6>
-                    <h6> Time Intensity: {fullStar.repeat(Math.round(eachHowdiy.timeOfPreparation)) + emptyStar.repeat(3 - Math.round(eachHowdiy.timeOfPreparation))}</h6>
+                    <h6> Shelter Rate: {fullStar.repeat(Math.round(eachHowdiy.costRating)) + emptyStar.repeat(3 - Math.round(eachHowdiy.costRating))}</h6>
+                    <h6> Languages: {fullStar.repeat(Math.round(eachHowdiy.difficultyRating)) + emptyStar.repeat(3 - Math.round(eachHowdiy.difficultyRating))}</h6>
                     </div>
                   </div>
                 </div>
