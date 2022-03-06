@@ -46,42 +46,47 @@ class Signup extends Component {
         <h1 className="root-title">ShelterME</h1>
         <div className="root-text">
         <form onSubmit={this.handleSubmit}>
+          <label>First Name:</label>
+          <br/>
           <input
             onChange={this.handleChange}
             type="text"
             name="firstName"
-            placeholder="First Name"
             value={firstName}
-          /><br/><br/>
+          />
+          <label>Last Name</label>
+          <br/>
           <input
             onChange={this.handleChange}
             type="text"
             name="lastName"
-            placeholder="Last Name"
             value={lastName}
-          /><br/><br/>
+          />
+          <label>Email</label>
+          <br/>
           <input
             onChange={this.handleChange}
             type="text"
             name="email"
-            placeholder="Email"
             value={email}
-          /><br/><br/>
+          />
+          <label>Username</label>
+          <br/>
           <input
             onChange={this.handleChange}
             type="text"
             name="username"
-            placeholder="Username"
             value={username}
-          /><br/><br/>
+          />
+          <label>Password</label>
+          <br/>
           <input
             onChange={this.handleChange}
             type="text"
             name="password"
-            placeholder="Password"
             value={password}
           /><br/><br/>
-          <button className="root-submit" type="submit">Submit</button>
+          <button className="root-submit" type="submit">Sign Up</button>
         </form>
         </div>
       </div>
