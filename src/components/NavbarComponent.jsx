@@ -1,6 +1,6 @@
 import React from "react";
 import authService from "./services/auth-services";
-import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Container, Navbar, Nav, NavDropdown, Offcanvas } from "react-bootstrap";
 //
 import './root.css';
 //
@@ -16,25 +16,31 @@ function NavbarComponent({ isLoggedIn, user, setUser }) {
   };
 
   return (
-    <div>
+    <div style={{height: "12vh", marginTop: "120px"}}>
       <Navbar collapseOnSelect expand="lg" className="navbar-bg">
         <Container className="navbar-main">
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
+          <Navbar.Offcanvas id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+      placement="bottom" style={{backgroundColor: "#FA9A84"}}
+    ><Offcanvas.Header closeButton>
+        <Offcanvas.Title id="offcanvasNavbarLabel"></Offcanvas.Title>
+      </Offcanvas.Header>
+          <Offcanvas.Body style={{backgroundColor: "#FFA7C0", display:"flex", flexDirection:"row"}}>
+            <Nav className="me-auto" >
               <NavDropdown title={<img src={ShelterLogo} alt="navbarimg" width="100"
                   height="50"/>} id="collasible-nav-dropdown">
                 <NavDropdown.Item href="/">Home</NavDropdown.Item>
-                <NavDropdown.Item href="/join">Join the Community</NavDropdown.Item>
+                <NavDropdown.Item href="/join">Donate</NavDropdown.Item>
                 
                 {isLoggedIn && user && (
                   <>
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="/categories">
-                      Categories
+                      Find Shelter
                     </NavDropdown.Item>
                     <NavDropdown.Item href="/howdiy/create">
-                      Create a Howdiy!
+                      Offer Shelter
                     </NavDropdown.Item>
                   </>
                 )}
@@ -64,7 +70,9 @@ function NavbarComponent({ isLoggedIn, user, setUser }) {
                 </>
               )}
             </Nav>
-          </Navbar.Collapse>
+          
+          </Offcanvas.Body>
+          </Navbar.Offcanvas>
         </Container>
       </Navbar>
     </div>

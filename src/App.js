@@ -8,7 +8,7 @@ import Signup from "./components/auth/Signup";
 import authService from "./components/services/auth-services";
 //
 import Home from "./components/Home";
-import Join from "./components/Join";
+import Donate from "./components/Donate";
 import NavbarComponent from "./components/NavbarComponent";
 //
 import Categories from "./components/categories/Categories";
@@ -17,6 +17,8 @@ import CategoryList from "./components/categories/CategoryList";
 import ShelterCreate from "./components/shelters/ShelterCreate";
 import Shelter from "./components/shelters/Shelter";
 import ShelterEdit from "./components/shelters/ShelterEdit";
+
+import logo from "./rootimg/Shelter.png"
 
 
 class App extends Component {
@@ -59,8 +61,9 @@ class App extends Component {
 
     return (
       <div className="App">
-        <NavbarComponent isLoggedIn={isLoggedIn} user={user} setUser={this.setUser} />
-
+        <header style={{backgroundColor:"#EADFCD", height: "12vh", marginTop: "-70px"}}>
+          <img src={logo} alt="title" className="root-title" style={{width: "25vw", marginLeft: "15vw", paddingTop:"2vh"}}/>
+        </header>
         <Switch>
         <Route
             exact path="/"
@@ -68,7 +71,7 @@ class App extends Component {
           />
           <Route
             exact path="/join"
-            render={(props) => <Join {...props} user={user}/>}
+            render={(props) => <Donate {...props} user={user}/>}
           />
           <Route
             path="/signup"
@@ -108,6 +111,7 @@ class App extends Component {
             render={(props) => <ShelterEdit {...props} />}
           />
         </Switch>
+        <NavbarComponent isLoggedIn={isLoggedIn} user={user} setUser={this.setUser} />
       </div>
     );
   }
