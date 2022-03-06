@@ -54,7 +54,7 @@ class AddIngredients extends Component {
           ></input>
           <br />
 
-          <label htmlFor="measure">Measure</label>
+          <label htmlFor="measure">Details</label>
           <input className="ingredients-item"
             onChange={this.handleChange}
             type="text"
@@ -62,7 +62,7 @@ class AddIngredients extends Component {
             value={measure}
           ></input>
           <br />
-          <button className="accordion-submit"> Add New Ingredient </button>
+          <button className="accordion-submit"> Add Extra Offer</button>
         </form>
       </div>
     );
