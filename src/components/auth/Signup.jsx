@@ -43,7 +43,7 @@ class Signup extends Component {
     const { firstName, lastName, email, username, password } = this.state;
     return (
       <div>
-      <img src="" alt="title" className="root-title" />
+        <h1 className="root-title">ShelterME</h1>
         <div className="root-text">
         <form onSubmit={this.handleSubmit}>
           <input

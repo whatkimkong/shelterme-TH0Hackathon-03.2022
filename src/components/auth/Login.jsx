@@ -22,7 +22,7 @@ class Login extends Component {
     authService.login(email, password).then((response) => {
       this.setState({ email: "", password: "" });
       this.props.setUser(response.data, true);
-      this.props.history.push(`/profile`)
+      this.props.history.push(`/`)
     });
   };
 
@@ -30,29 +30,31 @@ class Login extends Component {
     const { email, password } = this.state;
     return (
       <div>
-        <img src="" alt="title" className="root-title" />
+        <h1 className="root-title">ShelterME</h1>
         <div className="root-text">
           <form onSubmit={this.handleSubmit}>
+            <label>Email:</label>
+            <br />
             <input
               onChange={this.handleChange}
               type="text"
               name="email"
-              placeholder="Your email here"
               value={email}
             />
             <br />
+            <br />
+            <label>Password:</label>
             <br />
             <input
               onChange={this.handleChange}
               type="password"
               name="password"
-              placeholder="Your password here"
               value={password}
             />
             <br />
             <br />
             <button className="root-submit" type="submit">
-              Login
+              Log in
             </button>
           </form>
         </div>
