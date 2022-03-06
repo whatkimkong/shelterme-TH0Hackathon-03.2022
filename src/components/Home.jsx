@@ -3,20 +3,20 @@ import { NavLink } from "react-router-dom";
 //
 import "./root.css";
 //
-import title from "./img/howdiyGreen.png";
+import title from "./img/Shelter.png";
 
 export class Home extends Component {
   render() {
     const {user} = this.props;
     return (
       <div>
-        <img src={title} alt="title" className="root-title" />
+        <img src={title} alt="title" className="root-title" style={{width: "50vw", marginLeft: "20vw"}}/>
 
         <div className="root-text">
-          <h3>Shelterme</h3>
-          <h5>
-            Helping you find the shelter that is needed and MORE!!
-          </h5>
+         
+          <h5>For Body AND Mind</h5>
+          <h5>Enabling the future</h5>
+          <br/>
           
           { !user && (
             <div className="root-button-container">
@@ -25,9 +25,10 @@ export class Home extends Component {
             </NavLink>
           </div>
           )}
+          <br/>
           <div className="root-button-container">
             <NavLink className="root-submit" to="/join">
-              find out more...
+              FAQ
             </NavLink>
           </div>
         </div>
