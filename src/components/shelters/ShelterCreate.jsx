@@ -202,7 +202,7 @@ class ShelterCreate extends Component {
             <Accordion.Body className="accordion-inside">
               <form className="accordion-form" onSubmit={this.handleSubmit}>
                 <label className="accordion-text" htmlFor="category">
-                  Category
+                  Offer a Shelter
                 </label>
                 <select
                   onChange={this.handleChange}
@@ -211,36 +211,25 @@ class ShelterCreate extends Component {
                   required
                 >
                   <option value="">
-                    Please select the category of your product
+                    Type
                   </option>
-                  <option value="facecare">Facecare</option>
-                  <option value="bodycare">Bodycare</option>
-                  <option value="housecare">Housecare</option>
-                  <option value="play">Play</option>
-                  <option value="food">Food</option>
-                  <option value="drink">Drink</option>
+                  <option value="mind">Mind</option>
+                  <option value="body">Body</option>
                 </select>
                 <br />
                 <label className="accordion-text" htmlFor="descriptiveName">
-                  Choose a title, please describe your product as clearly as
-                  possible:
+                  Describe your Shelter
                 </label>
                 <input
                   onChange={this.handleChange}
-                  placeholder="6 words maximum"
                   type="text"
                   name="descriptiveName"
                   value={descriptiveName}
                 />
                 <br />
                 <br />
-                <label className="accordion-link" htmlFor="funName">
-                  Fun Name
-                </label>
-                <input value={funName} readonly />
-                <br />
                 <label className="accordion-text" htmlFor="imageUrl">
-                  Display Image for your Product:
+                  Add an Image to Represent it:
                 </label>
                 {imageUrl && (
                   <>
@@ -259,15 +248,6 @@ class ShelterCreate extends Component {
                   type="file"
                 />
 
-                <label htmlFor="isGiftable">
-                  Is it Giftable?
-                  <input
-                    onChange={this.handleChange}
-                    type="checkbox"
-                    name="isGiftable"
-                    checked={isGiftable}
-                  />
-                </label>
                 <br />
                 <br />
                 <p className="accordion-link">
@@ -275,7 +255,7 @@ class ShelterCreate extends Component {
                   lowest, 3 being highest
                 </p>
                 <label htmlFor="timeOfPreparation">
-                  Rate how time consuming the Howdiy is:
+                  Rate how safe is your area:
                 </label>
                 <input
                   onChange={this.handleChange}
@@ -286,7 +266,7 @@ class ShelterCreate extends Component {
                   value={timeOfPreparation}
                 />
                 <label htmlFor="costRating">
-                  Rate how cost intense the Howdiy is
+                  Rate how lovely you are
                 </label>
                 <input
                   onChange={this.handleChange}
@@ -297,7 +277,7 @@ class ShelterCreate extends Component {
                   value={costRating}
                 />
                 <label htmlFor="difficultyRating">
-                  Rate how difficult the Howdiy is
+                  How many languages do you speak
                 </label>
                 <input
                   onChange={this.handleChange}
@@ -314,7 +294,7 @@ class ShelterCreate extends Component {
                   before Submitting here:
                 </label>
                 <button className="accordion-submit" type="submit">
-                  Create your Howdiy
+                  Submit your Shelter
                 </button>
               </form>
             </Accordion.Body>
@@ -325,7 +305,7 @@ class ShelterCreate extends Component {
             </Accordion.Header>
             <Accordion.Body className="accordion-inside">
               <label htmlFor="ingredientsTable">
-                Here are your ingredients:
+                Extras Offered:
               </label>
               <ul className="accordion-list">
                 <br />
@@ -355,10 +335,10 @@ class ShelterCreate extends Component {
               <AddIngredients handleAddIngredient={this.handleAddIngredient} />
               <br />
               <label htmlFor="preparationTable">
-                Here are your Preparation Steps:
+                Extra Details:
               </label>
               <ul className="accordion-list">
-                <br />
+                
                 {preparation.map((eachStep) => {
                   return (
                     <React.Fragment key={eachStep.step + eachStep.description}>
@@ -382,14 +362,14 @@ class ShelterCreate extends Component {
               <form onSubmit={this.handlePreparationSubmit}>
                 <textarea
                   onChange={this.handleChange}
-                  placeholder="Please explain this step here ... "
+                  placeholder="Anything to note?"
                   type="text"
                   name="description"
                   value={description}
                 />
                 <br />
                 <button className="accordion-submit" type="submit">
-                  Add a Preparation Step
+                  Add a detail
                 </button>
               </form>
             </Accordion.Body>
@@ -399,7 +379,7 @@ class ShelterCreate extends Component {
               Part Three <p className="accordion-title-info">(now or later)</p>
             </Accordion.Header>
             <Accordion.Body className="accordion-inside">
-              <label htmlFor="galleryTable">Here is your Gallery:</label>
+              <label htmlFor="galleryTable">Here is your Shelter Gallery:</label>
               <ul>
                 {gallery.length >= 1 &&
                   gallery.map((eachImg) => {
@@ -434,28 +414,5 @@ class ShelterCreate extends Component {
     );
   }
 }
-
-// hardcoded is okay but otherwise loop with a map
-
-/* 
-updateUser = (user) => { 
-    recipeService
-      .getUser(user)
-      .then((response) => {
-        this.setState({ createdBy: response.data, isLoading: false });
-      })
-      .catch((err) => {
-        this.props.history.push("/500");
-      });
-
- // in recipeService - contacting the BE uses the route recipe.routes.js
-  getUser = (user) => {
-    return this.service.get('/user');
-  };
-
-  TRIED BUT DID NOT NEED:
-// import recipeService from "../services/recipe-services";
-// let generateName = require("sillyname");
-} */
 
 export default ShelterCreate;
