@@ -16,7 +16,9 @@ Sheltering the mind offers free psychiatric councel from volunteer mental health
 ## App Translation on Entry
 The app contains a language feature so the user can select their native language.
 
+## Verification Protection
 > The app also provides the ability to rate both the user and the volunteer, so as to add accountability and trust.
+> A Verification System is also in place to ensure the offered Services are trustworthy and possessing of the necessary qualifications.
 
 ## Future Prospects
 The app aims to be expanded to include legal assistance, education, training, employment, and child care in future rollouts.
