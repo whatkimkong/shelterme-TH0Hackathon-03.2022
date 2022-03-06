@@ -13,24 +13,21 @@
 }
 
 .icon-img-styles {
-  height: 13vh;
-  min-height: 100px;
-  min-width: 140px;
-  max-width: 180px;
+  width: 14vw;
 }
 
 .category-btn {
-  border: solid;
-  border-color: #8eac8c;
-  background-color: #7c8a7b;
-  border-radius: 50%;
-  color: #dcd6d1;
+  border: 0px;
+  background-color: #D22F27;
+  border-radius: 15px;
+  color: white;
   font-weight: bold;
   font-size: x-large;
   text-decoration: none;
   display: flex;
   flex-direction: column;
-  padding: 20px 0px 10px 30px;
+  box-shadow: inset;
+  padding: 20px 30px 20px 30px;
   margin: 10px 10px 20px 40px;
 }
   
@@ -41,8 +38,8 @@
 .howdiy-listed {
   border: none;
   margin: 20px 40px 0px 40px;
-  background-color: #e0ecdf;
-  color: rgb(95, 93, 93);
+  background-color: #FFA7C0;
+  color: black;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -60,8 +57,8 @@
   display: flex;
   justify-content: flex-start;
   border-radius: 50%;
-  height: 20vw;
-  width: 20vw;
+  height: 10vw;
+  width: 10vw;
   max-height: 200px;
   max-width: 200px;
 }
